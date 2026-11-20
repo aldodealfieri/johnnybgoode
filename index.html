@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Johnny B. Goode – Pub al Vomero, Napoli</title>
+<meta name="description" content="Johnny B. Goode, pub al Vomero (Napoli). Aperti ogni sera dalle 19:00 all' 01:00. Prenota il tuo tavolo online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&family=Pacifico&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Road Script';src:url('font/RoadScript.woff2') format('woff2'),url('font/RoadScript.ttf') format('truetype'),url('font/RoadScript.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+:root{
+  --bg:#0c2447; --bg2:#123566; --cherry:#f58220; --butter:#ffb454; --paper:#f4f1ea; --muted:#b8c6e0; --ink:#0c2447;
+  --display:'Alfa Slab One','Rockwell','Georgia',serif; --body:'DM Sans','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--paper);font:400 1.0625rem/1.6 var(--body)}
+a{color:inherit}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.1;margin:0 0 1rem}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--butter)}
+p{max-width:60ch}
+:focus-visible{outline:3px solid var(--butter);outline-offset:3px}
+
+nav{position:sticky;top:0;z-index:5;background:rgba(12,36,71,.94);backdrop-filter:blur(6px);border-bottom:2px solid var(--cherry)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.7rem;padding-bottom:.7rem}
+nav .logo{font-family:var(--display);color:var(--butter);text-decoration:none;font-size:1.15rem}
+nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;align-items:center}
+nav ul a{text-decoration:none;font-weight:500}
+nav ul a:hover{color:var(--butter)}
+.btn{display:inline-block;background:var(--cherry);color:var(--ink);font:700 1rem var(--body);padding:.85rem 1.6rem;border:0;border-radius:999px;text-decoration:none;cursor:pointer}
+.btn:hover{background:#ff9a3d}
+nav .btn{padding:.5rem 1.1rem}
+.burger{display:none;position:relative;width:44px;height:44px;background:none;border:0;padding:0;cursor:pointer}
+.burger span{position:absolute;left:9px;right:9px;height:3px;background:var(--butter);border-radius:2px;transition:transform .25s,opacity .2s,top .25s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+.burger.open span:nth-child(1){top:20px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:20px;transform:rotate(-45deg)}
+@media(max-width:640px){
+  .burger{display:block}
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(12,36,71,.98);border-bottom:2px solid var(--cherry);padding:.4rem 1.25rem 1.2rem}
+  nav ul.open{display:flex}
+  nav ul li a{display:block;padding:.9rem 0;border-bottom:1px solid rgba(244,241,234,.12)}
+  nav ul li:last-child a{border:0;margin-top:.8rem;text-align:center}
+}
+
+.hero{padding:4rem 0 5rem}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(3rem,9vw,6rem)}
+.hero .lead{font-size:1.25rem;color:var(--muted)}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.75rem;align-items:center}
+.hero .actions a.link{font-weight:500}
+.frame{position:relative;width:100%;max-width:26rem;margin:0 auto;aspect-ratio:4/5;border:6px solid var(--cherry);border-radius:.4rem;
+  background:linear-gradient(160deg,#123566,#0c2447);box-shadow:10px 10px 0 rgba(245,130,32,.35),0 20px 50px rgba(0,0,0,.5);transform:rotate(2deg);overflow:hidden;
+  display:grid;place-items:center;text-align:center;color:var(--muted);padding:1.5rem}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.frame.wide{aspect-ratio:4/3;max-width:none;transform:rotate(-1.5deg)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.frame{max-width:19rem;order:-1}}
+.script{position:relative;isolation:isolate;font-family:'Road Script','Pacifico','Lobster','Brush Script MT',cursive;font-weight:400;line-height:1.25;
+  color:#5cc8f5;-webkit-text-stroke:3px #5cc8f5;transform:rotate(-4deg);transform-origin:left center;padding:.1em .2em;margin-bottom:1.2rem}
+.script::before,.script::after{content:attr(data-text);position:absolute;inset:0;padding:inherit;z-index:-1;pointer-events:none}
+.script::after{color:#0a2a66;-webkit-text-stroke:11px #0a2a66}
+.script::before{color:var(--cherry);-webkit-text-stroke:20px var(--cherry);transform:translate(5px,6px)}
+.script.lit::before{text-shadow:0 0 12px var(--cherry),0 0 28px var(--cherry);animation:flicker 5s infinite}
+@keyframes flicker{0%,17%,22%,56%,100%{opacity:1}18%{opacity:.35}19%{opacity:1}20%{opacity:.5}21%{opacity:.9}57%{opacity:.6}58%{opacity:1}}
+.kicker{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;margin:0 0 .6rem;font-size:clamp(1.3rem,3.2vw,2rem)}
+.kicker .the{font-family:'Lobster','Pacifico',cursive;color:#2fbf71;-webkit-text-stroke:1px #fff;text-shadow:2px 2px 0 #0a2a66;font-size:1.15em}
+.kicker .ita{font:italic 700 1em Georgia,'Times New Roman',serif;color:#fff;text-shadow:2px 2px 0 #0a2a66}
+.kicker .pub{font-family:var(--display);color:#e3232c;font-size:1.6em;line-height:1;letter-spacing:.02em;
+  text-shadow:2px 0 #fff,-2px 0 #fff,0 2px #fff,0 -2px #fff,2px 2px #fff,-2px -2px #fff,2px -2px #fff,-2px 2px #fff,5px 5px 0 #0a2a66}
+.neon{color:#fff;text-shadow:0 0 6px #fff,0 0 14px var(--cherry),0 0 28px var(--cherry),0 0 48px var(--cherry)}
+.checker{height:36px;background:repeating-conic-gradient(#f4f1ea 0 25%,#16130f 0 50%) 0 0/36px 36px;border-top:3px solid var(--cherry);border-bottom:3px solid var(--cherry);animation:slide 14s linear infinite}
+@keyframes slide{to{background-position:72px 0}}
+.btn{transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(245,130,32,.35)}
+.hero .wrap>div>*{opacity:0;animation:up .7s ease-out forwards}
+.hero .wrap>div>*:nth-child(2){animation-delay:.12s}.hero .wrap>div>*:nth-child(3){animation-delay:.28s}.hero .wrap>div>*:nth-child(4){animation-delay:.42s}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1}}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease-out,transform .7s ease-out}
+.js .reveal.in{opacity:1;transform:none}
+.social{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem}
+.social a{display:inline-flex;align-items:center;gap:.7rem;padding:.8rem 1.4rem;border:2px solid var(--cherry);border-radius:999px;text-decoration:none;font-weight:700;transition:transform .2s,background .2s,color .2s}
+.social a:hover{background:var(--cherry);color:var(--ink);transform:translateY(-3px)}
+.social svg{width:1.4rem;height:1.4rem;fill:none;stroke:currentColor;stroke-width:2}
+.social svg.f{fill:currentColor;stroke:none}
+@media(prefers-reduced-motion:reduce){.hero .wrap>div>*{opacity:1;animation:none}.js .reveal{opacity:1;transform:none;transition:none}.btn,.social a{transition:none}.script.lit::before{animation:none}html{scroll-behavior:auto}.checker{animation:none}}
+
+.alt{background:var(--bg2)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem;margin-top:2rem}
+.menu h3{font-size:1.4rem;color:var(--paper);border-bottom:3px solid var(--cherry);padding-bottom:.4rem;display:inline-block}
+.menu ul{list-style:none;padding:0;margin:.5rem 0 0}
+.menu li{padding:.35rem 0;border-bottom:1px solid rgba(243,239,230,.15)}
+.note{color:var(--muted);font-size:.95rem;margin-top:1.5rem}
+
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2rem}
+.info h3{font-size:1.2rem;color:var(--butter)}
+.info p{margin:0 0 .5rem}
+
+form{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;max-width:42rem;margin-top:1.5rem}
+form .full{grid-column:1/-1}
+@media(max-width:560px){form{grid-template-columns:1fr}}
+label{display:block;font-weight:500;margin-bottom:.3rem}
+input,select,textarea{width:100%;font:inherit;color:var(--paper);background:var(--bg);border:2px solid #3d6199;border-radius:.5rem;padding:.7rem .8rem}
+input:focus,select:focus,textarea:focus{border-color:var(--butter);outline:none}
+textarea{min-height:5.5rem;resize:vertical}
+.hp{position:absolute;left:-9999px}
+#esito{grid-column:1/-1;margin:0;padding:.9rem 1rem;border-radius:.5rem;display:none}
+#esito.ok{display:block;background:#1d5a3a;color:#fff}
+#esito.err{display:block;background:#7a1f24;color:#fff}
+footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.95rem;border-top:2px solid var(--cherry)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Johnny B. Goode</a>
+    <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu-nav"><span></span><span></span><span></span></button>
+    <ul id="menu-nav">
+      <li><a href="#locale">Il locale</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#info">Dove siamo</a></li>
+      <li><a href="#social">Social</a></li>
+      <li><a class="btn" href="#prenota">Prenota</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="kicker"><span class="the">The</span> <span class="ita">Italian</span> <span class="pub">PUB</span></p>
+      <h1 class="script" data-text="Johnny B. Goode">Johnny B. Goode</h1>
+      <p class="lead">Pub e birreria al Vomero. panini, sfizioserie e altro, sia d'asporto e sia a tavola!</p>
+      <div class="actions">
+        <a class="btn" href="#prenota">Prenota un tavolo</a>
+        <a class="link" href="#menu">Guarda il menu</a>
+      </div>
+    </div>
+    <div class="frame">Foto del pub<br>(salvala come foto/pub.jpg)<img src="foto/pub.jpg" alt="Interno del pub Johnny B. Goode" onerror="this.remove()"></div>
+  </div>
+</header>
+
+<div class="checker" aria-hidden="true"></div>
+<section class="alt" id="locale">
+  <div class="wrap about">
+    <div>
+      <h2>Il locale</h2>
+      <p>Il Johnny B. Goode nasce da un'esperienza di oltre 40 anni di Aldo, titolare del noto Pub Vecchia America, che con la passione di suo figlio Giovanni trasformano il panino in un cibo dai molteplici sapori.</p>
+      <p>Ogni sera aperti dalle 19:00 all' 01:00. Per i gruppi e le serate più affollate conviene prenotare.</p>
+    </div>
+    <div class="frame wide">Foto del locale<br>(salvala come foto/locale.jpg)<img src="foto/locale.jpg" alt="Il locale Johnny B. Goode" loading="lazy" onerror="this.remove()"></div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>Il menu</h2>
+    <p>Il menu completo, con panini, piatti, sfizioserie e birre sempre aggiornato online. </p>
+    <p><a class="btn" href="https://dishcovery.menu/app/restaurants/f31dcf522412964a28648d4bc7c8936c/" target="_blank" rel="noopener">Apri il menu</a></p>
+    <p class="note">Per allergie o intolleranze, chiedere al personale</p>
+  </div>
+</section>
+
+<section class="alt" id="info">
+  <div class="wrap">
+    <h2>Dove siamo</h2>
+    <div class="info">
+      <div>
+        <h3>Indirizzo</h3>
+        <p>Via Luigi Caldieri 133/135<br>80128 Napoli (Vomero)</p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Johnny+B+Goode+Via+Luigi+Caldieri+133+Napoli" target="_blank" rel="noopener">Apri su Google Maps</a></p>
+      </div>
+      <div>
+        <h3>Orari</h3>
+        <p>Tutti i giorni<br>dalle 19:00 all' 01:00</p>
+      </div>
+      <div>
+        <h3>Telefono</h3>
+        <p><a href="tel:+3908119570784">081 1957 0784</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="checker" aria-hidden="true"></div>
+<section id="prenota">
+  <div class="wrap">
+    <h2>Prenota un tavolo</h2>
+    <p>Compila i dati: si apre WhatsApp con il messaggio già scritto, ti basta premere invio. Ti rispondiamo per confermare il tavolo.</p>
+    <form id="form-prenota" novalidate>
+      <div class="full"><label for="nome">Nome e cognome</label><input id="nome" required autocomplete="name"></div>
+      <div><label for="data">Data</label><input id="data" type="date" required></div>
+      <div><label for="ora">Ora</label><select id="ora" required>
+          <option>19:00</option><option>19:15</option><option>19:30</option><option>19:45</option><option>20:00</option><option>20:15</option><option>20:30</option><option>20:45</option><option selected>21:00</option><option>21:15</option><option>21:30</option><option>21:45</option><option>22:00</option><option>22:15</option><option>22:30</option><option>22:45</option><option>23:00</option><option>23:15</option><option>23:30</option><option>23:45</option><option>00:00</option><option>00:15</option><option>00:30</option><option>00:45</option><option>01:00</option>
+        </select></div>
+      <div class="full"><label for="persone">Numero di persone</label>
+        <select id="persone" required>
+          <option>1</option><option>2</option><option>3</option><option>4</option><option selected>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+        </select>
+      </div>
+      <p class="note full"><strong>Compleanni o gruppi numerosi?</strong> Per questi casi prenota chiamando direttamente lo <a href="tel:+3908119570784">081 1957 0784</a>.</p>
+      <div class="full"><button class="btn" type="submit">Prenota su WhatsApp</button></div>
+      <p id="esito" role="status"></p>
+    </form>
+    <p class="note">Preferisci scrivere tu? <a id="wa-diretto" href="#">Apri una chat vuota</a> oppure chiama lo <a href="tel:+3908119570784">081 1957 0784</a>.</p>
+  </div>
+</section>
+
+<section class="alt" id="social">
+  <div class="wrap">
+    <h2>Seguici sui social</h2>
+    <p>Foto, serate e novità del locale sono sulle nostre pagine.</p>
+    <div class="social">
+      <a href="https://www.instagram.com/INSERISCI_PROFILO_INSTAGRAM" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a>
+      <a href="https://www.facebook.com/INSERISCI_PAGINA_FACEBOOK" target="_blank" rel="noopener"><svg class="f" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21z"/></svg>Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Johnny B. Goode · Via Luigi Caldieri 133/135, Napoli · <a href="tel:+3908119570784">081 1957 0784</a></div>
+</footer>
+
+<script>
+(function(){
+  var NUMERO='393926002120'; /* numero WhatsApp Business: prefisso 39 + numero, senza + né spazi */
+  var f=document.getElementById('form-prenota'), d=document.getElementById('data');
+  d.min=new Date().toISOString().slice(0,10);
+  document.getElementById('wa-diretto').href='https://wa.me/'+NUMERO;
+  function v(id){return document.getElementById(id).value.trim()}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return}
+    var dt=new Date(v('data')+'T12:00:00').toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
+    var t='Ciao, vorrei prenotare un tavolo da Johnny B. Goode.\n'+
+      'Nome: '+v('nome')+'\nData: '+dt+'\nOra: '+v('ora')+'\nPersone: '+v('persone')+
+      '\nGrazie!';
+    window.open('https://wa.me/'+NUMERO+'?text='+encodeURIComponent(t),'_blank');
+  });
+})();
+</script>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var els=document.querySelectorAll('section h2,section .wrap>p,.about>*,.info>div,form,.social a');
+  if(!('IntersectionObserver' in window)){return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  els.forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+})();
+(function(){
+  var b=document.querySelector('.burger'), u=document.getElementById('menu-nav');
+  function set(o){b.classList.toggle('open',o);u.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Chiudi il menu':'Apri il menu')}
+  b.addEventListener('click',function(){set(!u.classList.contains('open'))});
+  u.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+})();
+(function(){
+  var h=document.querySelector('.script');
+  if(h&&document.fonts&&document.fonts.load){document.fonts.load('48px "Road Script"').then(function(f){if(f.length)h.classList.add('lit')}).catch(function(){})}
+})();
+</script>
+</body>
+</html>
